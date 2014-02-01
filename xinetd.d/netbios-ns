@@ -1,0 +1,12 @@
+service netbios-ns
+{
+	disable = no
+        id = netbios-ns
+        # port = netbios-ns
+        socket_type = dgram
+        protocol = udp
+        user = root
+        wait = yes
+        instances = 1
+        server = /usr/sbin/nmbd
+}

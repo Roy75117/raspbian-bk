@@ -1,0 +1,8 @@
+#!/bin/sh
+sync;sync
+echo 3 > /proc/sys/vm/drop_caches
+echo 1 > /proc/sys/vm/drop_caches
+echo 2 > /proc/sys/vm/drop_caches
+sync
+sysctl -w vm.drop_caches=1
+sync
