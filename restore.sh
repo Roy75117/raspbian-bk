@@ -1,12 +1,12 @@
-mkdir ~/media
-mkdir ~/media/downloads
-mkdir ~/bin
-chmod 777 ~/media
-chmod 777 ~/downloads
-cp ./xbmc.restart ~/bin/xbmc.restart
-chmod 755 ~/bin/xbmc.restart
-sudo cat ./bashrc > ~/.bashrc
-sudo cat ./profile > ~/.profile
+mkdir /home/pi/media
+mkdir /home/pi/media/downloads
+mkdir /home/pi/bin
+chmod 777 /home/pi/media
+chmod 777 /home/pi/downloads
+cp ./xbmc.restart /home/pi/bin/xbmc.restart
+chmod 755 /home/pi/bin/xbmc.restart
+sudo cat ./bashrc > /home/pi/.bashrc
+sudo cat ./profile > /home/pi/.profile
 # sudo cp ./vimrc ~/.vimrc
 # sudo cp ./vimrc /root/
 sudo cat ./smb.conf > /etc/samba/smb.conf
@@ -15,7 +15,7 @@ sudo cp ./free_m /etc/cron.hourly/free_m
 sudo chmod 755 /etc/cron.hourly/free_m
 sudo cat ./xinet.sh > /scripts/xinet.sh
 
-ln -s /run/shm/ ~/RAMDISK
+ln -s /run/shm/ /home/pi/RAMDISK
 
 # sudo passwd pi
 
