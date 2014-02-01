@@ -20,7 +20,11 @@ ln -s /run/shm/ /home/pi/RAMDISK
 # sudo passwd pi
 
 wget --no-check-certificate http://cl.ly/1t2t2E1Z410B/download/raspbmc.backup.gz
-sh ./raspbmc.backup.sh
+sudo initctl stop xbmc
+tar -xzf raspbmc.backup.gz -C /home/pi/
+# rm raspbmc.backup.tar.gz
+sudo initctl start xbmc
+# sh ./raspbmc.backup.sh
 
 sudo apt-get update
 sudo apt-get -y install dpkg
@@ -30,7 +34,7 @@ sudo rm -rf /var/cache/apt/archives/*.deb
 
 sudo /etc/init.d/transmission-daemon stop
 sudo cat ./transmission-daemon > /etc/init.d/transmission-daemon
-sudo cat ./setting.json > /etc/transmission-daemon/settings.json
+sudo cp ./setting.json /etc/transmission-daemon/setting.json
 
 sudo cat ./lighttpd.conf > /etc/lighttpd/lighttpd.conf
 
