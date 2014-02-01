@@ -13,6 +13,7 @@ sudo cat ./smb.conf > /etc/samba/smb.conf
 sudo cat ./rc.local > /rc.local
 sudo cp ./free_m /etc/cron.hourly/free_m
 sudo chmod 755 /etc/cron.hourly/free_m
+sudo cat ./xinet.sh > /scripts/xinet.sh
 
 ln -s /run/shm/ RAMDISK
 

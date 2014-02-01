@@ -11,6 +11,7 @@
 #
 # By default this script does nothing.
 
+sleep 45
 if [ $(pidof dropbear | wc -w) -lt 1 ];then
     /etc/init.d/dropbear start
 fi
