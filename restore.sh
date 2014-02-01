@@ -2,7 +2,7 @@ mkdir /home/pi/media
 mkdir /home/pi/media/downloads
 mkdir /home/pi/bin
 chmod 777 /home/pi/media
-chmod 777 /home/pi/downloads
+chmod 777 /home/pi/media/downloads
 cp ./xbmc.restart /home/pi/bin/xbmc.restart
 chmod 755 /home/pi/bin/xbmc.restart
 sudo cat ./bashrc > /home/pi/.bashrc
@@ -10,7 +10,7 @@ sudo cat ./profile > /home/pi/.profile
 # sudo cp ./vimrc ~/.vimrc
 # sudo cp ./vimrc /root/
 sudo cat ./smb.conf > /etc/samba/smb.conf
-sudo cat ./rc.local > /rc.local
+sudo cat ./rc.local > /etc/rc.local
 sudo cp ./free_m /etc/cron.hourly/free_m
 sudo chmod 755 /etc/cron.hourly/free_m
 sudo cat ./xinet.sh > /scripts/xinet.sh

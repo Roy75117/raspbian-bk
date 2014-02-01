@@ -2,7 +2,7 @@ personal backup for raspbmc
 
 How :
 
-     sh ./restore.sh
+     sudo sh ./restore.sh
 
 
 What : 
