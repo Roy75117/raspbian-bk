@@ -15,11 +15,11 @@ sudo cp ./free_m /etc/cron.hourly/free_m
 sudo chmod 755 /etc/cron.hourly/free_m
 sudo cat ./xinet.sh > /scripts/xinet.sh
 
-ln -s /run/shm/ RAMDISK
+ln -s /run/shm/ ~/RAMDISK
 
 # sudo passwd pi
 
-wget http://cl.ly/1t2t2E1Z410B/download/raspbmc.backup.gz
+wget --no-check-certificate http://cl.ly/1t2t2E1Z410B/download/raspbmc.backup.gz
 sh ./raspbmc.backup.sh
 
 sudo apt-get update
