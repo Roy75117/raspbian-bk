@@ -38,7 +38,7 @@ sudo initctl start xbmc
 
 sudo apt-get update
 sudo apt-get -y install dpkg
-sudo apt-get -y install transmission-daemon lighttpd htop bzip2
+sudo apt-get -y install transmission-daemon lighttpd htop bzip2 aria2
 sudo apt-get autoclean
 sudo rm -rf /var/cache/apt/archives/*.deb
 
