@@ -11,6 +11,10 @@
 #
 # By default this script does nothing.
 
+#http://binux.github.io/yaaw/
+#start aria2c remote control protocol
+aria2c --daemon --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all
+
 sleep 45
 if [ $(pidof dropbear | wc -w) -lt 1 ];then
     /etc/init.d/dropbear start
