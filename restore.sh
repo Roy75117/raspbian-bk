@@ -1,7 +1,7 @@
 mkdir /home/pi/media
 mkdir /home/pi/media/downloads
 mkdir /home/pi/bin
-mkdir /home/pi/.aria
+mkdir /home/pi/.aria2
 chmod 777 /home/pi/media
 chmod 777 /home/pi/media/downloads
 
@@ -10,7 +10,7 @@ chmod 755 /home/pi/bin/xbmc.restart
 
 cp ./bashrc /home/pi/.bashrc
 cp ./profile /home/pi/.profile
-cp aria.conf /home/pi/.aria2/aria2.conf
+cp aria2.conf /home/pi/.aria2/aria2.conf
 
 # sudo cp ./vimrc ~/.vimrc
 # sudo cp ./vimrc /root/
