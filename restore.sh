@@ -89,10 +89,10 @@ if [ $folderIsExist = 1 ]; then
 	rm "$packname"
 	# 如果之前没有安装过，则先将原系统的文件改为
 	if [ ! -f "$webFolder$orgindex" -a -f "$webFolder$index" ]; then
-		mv "$webFolder$index" "$webFolder$orgindex"
+		sudo mv "$webFolder$index" "$webFolder$orgindex"
 	fi
 	# 复制文件到
-	cp -r web "$rootFolder"
+	sudo cp -r web "$rootFolder"
 	echo "Done."
 else
 	echo "##############################################"
