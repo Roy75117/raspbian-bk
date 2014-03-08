@@ -1,3 +1,4 @@
+#! /bin/sh
 mkdir /home/pi/media
 mkdir /home/pi/media/downloads
 mkdir /home/pi/bin
