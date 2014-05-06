@@ -68,6 +68,7 @@ echo '========================================================'
 echo 'step 3.置換字型。replace font.'
 sudo cp ~/wt011.ttf /opt/xbmc-bcm/xbmc-bin/share/xbmc/media/Fonts/arial.ttf
 sudo chmod 644 /opt/xbmc-bcm/xbmc-bin/share/xbmc/media/Fonts/arial.ttf
+sudo rm ~/wt011.ttf
 echo '置換成功。job done.'
 echo '重新啟動xbmc後盡情享用。restart xbmc...'
 sudo initctl stop xbmc
