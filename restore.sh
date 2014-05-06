@@ -53,6 +53,27 @@ sudo cp ./setting.json /etc/transmission-daemon/setting.json
 sudo cp ./lighttpd.conf /etc/lighttpd/lighttpd.conf
 sudo chmod 744 /etc/lighttpd/lighttpd.conf
 
+#Replace font to fix Chinese Subtile
+echo '--------自動置換字型腳本，作者: 蔡孟珂 mktsai@sweea.com------'
+echo '========================================================'
+echo 'step 1.下載 王漢宗自由字型 細黑體。download HanWangHeiLight font.'
+cd ~/
+#wget http://dl.dropboxusercontent.com/u/13129397/raspbmc/wt011.ttf
+wget --no-check-certificate http://cl.ly/0r2i2R3x1x1a/download/wt011.ttf
+echo '下載完成。'
+echo '========================================================'
+echo 'step 2.備份預設arial.ttf字型為arial.ttf.bak。Backup default font.'
+sudo mv /opt/xbmc-bcm/xbmc-bin/share/xbmc/media/Fonts/arial.ttf /opt/xbmc-bcm/xbmc-bin/share/xbmc/media/Fonts/arial.ttf.bak
+echo '========================================================'
+echo 'step 3.置換字型。replace font.'
+sudo cp ~/wt011.ttf /opt/xbmc-bcm/xbmc-bin/share/xbmc/media/Fonts/arial.ttf
+sudo chmod 644 /opt/xbmc-bcm/xbmc-bin/share/xbmc/media/Fonts/arial.ttf
+echo '置換成功。job done.'
+echo '重新啟動xbmc後盡情享用。restart xbmc...'
+sudo initctl stop xbmc
+sudo initctl start xbmc
+echo '請輸入 exit 並按下enter以離開連線'
+echo '========================================================'
 
 # Install better Transmission Web Control (a custom web UI)
 #https://code.google.com/p/transmission-control/
