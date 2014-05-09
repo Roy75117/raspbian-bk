@@ -59,16 +59,17 @@ echo '========================================================'
 echo 'step 1.下載 王漢宗自由字型 細黑體。download HanWangHeiLight font.'
 cd ~/
 #wget http://dl.dropboxusercontent.com/u/13129397/raspbmc/wt011.ttf
-wget --no-check-certificate http://cl.ly/0r2i2R3x1x1a/download/wt011.ttf
+#wget --no-check-certificate http://cl.ly/0r2i2R3x1x1a/download/wt011.ttf
+wget --no-check-certificate http://cl.ly/0Y27283z0w2x/download/arial.ttf
 echo '下載完成。'
 echo '========================================================'
 echo 'step 2.備份預設arial.ttf字型為arial.ttf.bak。Backup default font.'
 sudo mv /opt/xbmc-bcm/xbmc-bin/share/xbmc/media/Fonts/arial.ttf /opt/xbmc-bcm/xbmc-bin/share/xbmc/media/Fonts/arial.ttf.bak
 echo '========================================================'
 echo 'step 3.置換字型。replace font.'
-sudo cp ~/wt011.ttf /opt/xbmc-bcm/xbmc-bin/share/xbmc/media/Fonts/arial.ttf
+sudo mv ~/arial.ttf /opt/xbmc-bcm/xbmc-bin/share/xbmc/media/Fonts/arial.ttf
 sudo chmod 644 /opt/xbmc-bcm/xbmc-bin/share/xbmc/media/Fonts/arial.ttf
-sudo rm ~/wt011.ttf
+sync
 echo '置換成功。job done.'
 echo '重新啟動xbmc後盡情享用。restart xbmc...'
 sudo initctl stop xbmc
