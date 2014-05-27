@@ -13,11 +13,11 @@ sudo ln -s ../init.d/aaxbmc K10aaxbmc
 cd /etc/rc0.d
 sudo ln -s ../init.d/aaxbmc K01aaxbmc
 
-sudo cp -r /home/pi/.xbmc /run/shm
+cp -r /home/pi/.xbmc /run/shm
 #sudo ln -s /run/shm/.xbmc /home/pi/.xbmc
 sudo mount --bind /run/shm/.xbmc /home/pi/.xbmc
 #sudo mount -o bind /run/shm/.xbmc /home/pi/.xbmc
-sudo mkdir /home/pi/.xbmc-backup
+mkdir /home/pi/.xbmc-backup
 sudo service xbmc start
 
 
