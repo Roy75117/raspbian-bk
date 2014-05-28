@@ -32,13 +32,15 @@ sudo service xbmc start
 case "$1" in
   start)
 	sudo service xbmc stop
-	rsync -aog --delete-after --delay-updates /home/pi/.xbmc-backup/.xbmc /tmp/ &> /dev/null
+	rsync -aog --delete-after --delay-updates /home/pi/.xbmc-backup/.xbmc /tmp/ > /dev/null
+	sleep 2
 	sudo mount --bind /tmp/.xbmc /home/pi/.xbmc
 	sudo service xbmc start
 	#sudo mount -o bind /run/shm/.xbmc /home/pi/.xbmc
     ;;
   stop)
-	rsync -aog --delete-after --delay-updates /tmp/.xbmc /home/pi/.xbmc-backup &> /dev/null
+	rsync -aog --delete-after --delay-updates /tmp/.xbmc /home/pi/.xbmc-backup > /dev/null
+	sleep 2
 	sync
     ;;
   *)
