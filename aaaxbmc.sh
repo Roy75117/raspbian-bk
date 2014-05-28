@@ -10,10 +10,11 @@ sudo chmod +x /etc/init.d/aaxbmc
 #sudo ln -s ../init.d/aaxbmc S50aaxbmc
 #cd /etc/rc1.d
 #sudo ln -s ../init.d/aaxbmc K10aaxbmc
-cd /etc/rc0.d
-sudo ln -s ../init.d/aaxbmc K03aaxbmc
-cd /etc/rc6.d
-sudo ln -s ../init.d/aaxbmc K03aaxbmc
+#cd /etc/rc0.d
+#sudo ln -s ../init.d/aaxbmc K03aaxbmc
+#cd /etc/rc6.d
+#sudo ln -s ../init.d/aaxbmc K03aaxbmc
+
 
 cp -r /home/pi/.xbmc /tmp
 #sudo ln -s /run/shm/.xbmc /home/pi/.xbmc
@@ -51,6 +52,10 @@ exit 0
 
 #---------------------/etc/rc.local---------------------------#
 /etc/init.d/aaxbmc start
+#-------------------------------------------------------------#
+
+#---------------------/etc/init.d/sendsigs--------------------#
+/etc/init.d/aaxbmc stop
 #-------------------------------------------------------------#
 
 #---------------------/etc/fstab------------------------------#
