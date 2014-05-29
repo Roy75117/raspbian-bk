@@ -31,12 +31,12 @@ sudo service xbmc start
 
 case "$1" in
   start)
-  	if [ $(pidof xbmc.bin | wc -w) -gt 0 ];then
-    	   sudo service xbmc stop
+	if [ $(pidof xbmc.bin | wc -w) -gt 0 ];then
+		sudo service xbmc stop
 	fi
 	rsync -aog --delete-after --delay-updates /home/pi/.xbmc-backup/.xbmc /tmp/ > /dev/null
 	sudo mount --bind /tmp/.xbmc /home/pi/.xbmc
-	sudo service xbmc start
+	#sudo service xbmc start
 	#sudo mount -o bind /run/shm/.xbmc /home/pi/.xbmc
     ;;
   stop)
@@ -53,7 +53,7 @@ esac
 exit 0
 #-------------------------------------------------------------#
 
-#---------------------/etc/rc.local---------------------------#
+#----/etc/init.d/mountall.sh or /etc/init.d/mountall-bootclean.sh------#
 /etc/init.d/aaxbmc start
 #-------------------------------------------------------------#
 
@@ -62,10 +62,9 @@ exit 0
 #-------------------------------------------------------------#
 
 #---------------------/etc/fstab------------------------------#
-proc            /proc           proc    defaults         0       0
-devpts          /dev/pts        devpts  rw,nosuid,noexec,relatime,gid=5,mode=620        0       0
-/dev/mmcblk0p1  /boot           vfat    defaults         0       0
-/dev/mmcblk0p2  /               ext4    defaults,noatime 0       0
-tmpfs           /tmp            tmpfs   defaults,noatime,mode=1777        0       0
+proc /proc proc defaults 0 0
+devpts /dev/pts devpts rw,nosuid,noexec,relatime,gid=5,mode=620 0 0
+/dev/mmcblk0p1 /boot vfat defaults 0 0
+/dev/mmcblk0p2 / ext4 defaults,noatime 0 0
+tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0
 #--------------------------------------------------------------#
-
