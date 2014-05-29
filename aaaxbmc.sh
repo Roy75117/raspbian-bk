@@ -36,7 +36,7 @@ case "$1" in
 	fi
 	rsync -aog --delete-after --delay-updates /home/pi/.xbmc-backup/.xbmc /tmp/ > /dev/null
 	sudo mount --bind /tmp/.xbmc /home/pi/.xbmc
-	#sudo service xbmc start
+	sudo service xbmc start
 	#sudo mount -o bind /run/shm/.xbmc /home/pi/.xbmc
     ;;
   stop)
@@ -53,7 +53,7 @@ esac
 exit 0
 #-------------------------------------------------------------#
 
-#----/etc/init.d/mountall.sh or /etc/init.d/mountall-bootclean.sh------#
+#----/etc/rc.local------#
 /etc/init.d/aaxbmc start
 #-------------------------------------------------------------#
 
