@@ -31,13 +31,8 @@ sudo service xbmc start
 
 case "$1" in
   start)
-	if [ $(pidof xbmc.bin | wc -w) -gt 0 ];then
-		sudo service xbmc stop
-	fi
 	rsync -aog --delete-after --delay-updates /home/pi/.xbmc-backup/.xbmc /tmp/ > /dev/null
 	sudo mount --bind /tmp/.xbmc /home/pi/.xbmc
-	sudo service xbmc start
-	#sudo mount -o bind /run/shm/.xbmc /home/pi/.xbmc
     ;;
   stop)
 	rsync -aog --delete-after --delay-updates /tmp/.xbmc /home/pi/.xbmc-backup > /dev/null
@@ -53,8 +48,10 @@ esac
 exit 0
 #-------------------------------------------------------------#
 
-#----/etc/rc.local------#
-/etc/init.d/aaxbmc start
+#----/etc/init/mountall.conf------#
+if [ $(mount | grep "tmpfs on /tmp" | wc -l) -gt 0 ];then
+  /etc/init.d/aaxbmc start
+fi
 #-------------------------------------------------------------#
 
 #---------------------/etc/init.d/sendsigs--------------------#
