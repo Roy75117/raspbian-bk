@@ -65,3 +65,8 @@ devpts /dev/pts devpts rw,nosuid,noexec,relatime,gid=5,mode=620 0 0
 /dev/mmcblk0p2 / ext4 defaults,noatime 0 0
 tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0
 #--------------------------------------------------------------#
+
+#---------------------/etc/default/rcS--------------------#
+# mount /tmp on tmpfs
+RAMTMP=yes
+#-------------------------------------------------------------#
