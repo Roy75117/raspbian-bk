@@ -53,6 +53,9 @@ sudo cp ./setting.json /etc/transmission-daemon/setting.json
 sudo cp ./lighttpd.conf /etc/lighttpd/lighttpd.conf
 sudo chmod 744 /etc/lighttpd/lighttpd.conf
 
+sudo chmod +x /etc/init.d/aria2
+sudo update-rc.d aria2 defaults
+
 #Replace font to fix Chinese Subtile
 echo '--------自動置換字型腳本，作者: 蔡孟珂 mktsai@sweea.com------'
 echo '========================================================'
