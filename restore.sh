@@ -53,8 +53,18 @@ sudo cp ./setting.json /etc/transmission-daemon/setting.json
 sudo cp ./lighttpd.conf /etc/lighttpd/lighttpd.conf
 sudo chmod 744 /etc/lighttpd/lighttpd.conf
 
+#For aria2c
 sudo chmod +x /etc/init.d/aria2
 sudo update-rc.d aria2 defaults
+cd /run/shm/
+wget --no-check-certificate https://github.com/binux/yaaw/zipball/master -O yaaw.zip
+wget --no-check-certificate https://www.github.com/ziahamza/webui-aria2/zipball/master -O webui-aria2.zip
+unzip yaaw.zip
+mv binux-yaaw-*  /home/pi/media/yaaw
+unzip webui-aria2.zip
+mv ziahamza-webui-aria2-* /home/pi/media/webui-aria2
+rm yaaw.zip
+rm webui-aria2.zip
 
 #Replace font to fix Chinese Subtile
 echo '--------自動置換字型腳本，作者: 蔡孟珂 mktsai@sweea.com------'
