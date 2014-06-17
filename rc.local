@@ -11,7 +11,8 @@
 #
 # By default this script does nothing.
 
-sleep 45
+sleep 45 #sleep 45 waiting for all init task completed in /etc/init
+/etc/init.d/aria2 start
 if [ $(pidof dropbear | wc -w) -lt 1 ];then
     /etc/init.d/dropbear start
 fi
