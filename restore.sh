@@ -56,7 +56,7 @@ sudo chmod 744 /etc/lighttpd/lighttpd.conf
 #For aria2c
 #http://www.albertdelafuente.com/doku.php/wiki/dev/raspi/aria2c-raspi
 sudo chmod +x /etc/init.d/aria2
-sudo update-rc.d aria2 defaults
+#sudo update-rc.d aria2 defaults
 cd /run/shm/
 wget --no-check-certificate https://github.com/binux/yaaw/zipball/master -O yaaw.zip
 wget --no-check-certificate https://www.github.com/ziahamza/webui-aria2/zipball/master -O webui-aria2.zip
