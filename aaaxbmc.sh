@@ -50,7 +50,9 @@ exit 0
 
 #----/etc/init/mountall.conf------#
 if [ $(mount | grep "tmpfs on /tmp" | wc -l) -gt 0 ];then
-  /etc/init.d/aaxbmc start
+   if [ $(mount | grep "home/pi/.xbmc type none (rw,bind)" | wc -l) -lt 1 ]$
+      /etc/init.d/aaxbmc start
+   fi
 fi
 #-------------------------------------------------------------#
 
