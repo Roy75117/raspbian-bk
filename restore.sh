@@ -5,6 +5,7 @@ mkdir /home/pi/bin
 mkdir /home/pi/.aria2
 chmod 777 /home/pi/media
 chmod 777 /home/pi/media/downloads
+cp nanorc ~/.nanorc
 
 cp ./xbmc.restart /home/pi/bin/xbmc.restart
 chmod 755 /home/pi/bin/xbmc.restart
