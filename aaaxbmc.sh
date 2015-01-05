@@ -31,11 +31,11 @@ sudo service xbmc start
 
 case "$1" in
   start)
-	rsync -aog --delete-after --delay-updates /home/pi/.xbmc-backup/.xbmc /tmp/ > /dev/null
-	sudo mount --bind /tmp/.xbmc /home/pi/.xbmc
+	rsync -aog --delete-after --delay-updates /home/pi/.kodi-backup/.kodi /tmp/ > /dev/null
+	sudo mount --bind /tmp/.kodi /home/pi/.kodi
     ;;
   stop)
-	rsync -aog --delete-after --delay-updates /tmp/.xbmc /home/pi/.xbmc-backup > /dev/null
+	rsync -aog --delete-after --delay-updates /tmp/.kodi /home/pi/.kodi-backup > /dev/null
 	sync
 	sleep 2
     ;;
