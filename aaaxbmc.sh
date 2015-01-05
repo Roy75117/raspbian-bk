@@ -16,11 +16,11 @@ sudo chmod +x /etc/init.d/aaxbmc
 #sudo ln -s ../init.d/aaxbmc K03aaxbmc
 
 
-cp -r /home/pi/.xbmc /tmp
+cp -r /home/pi/.kodi /tmp
 #sudo ln -s /run/shm/.xbmc /home/pi/.xbmc
-sudo mount --bind /tmp/.xbmc /home/pi/.xbmc
+sudo mount --bind /tmp/.kodi /home/pi/.kodi
 #sudo mount -o bind /run/shm/.xbmc /home/pi/.xbmc
-mkdir /home/pi/.xbmc-backup
+mkdir /home/pi/.kodi-backup
 sudo service xbmc start
 
 
@@ -50,7 +50,7 @@ exit 0
 
 #----/etc/init/mountall.conf------#
 if [ $(mount | grep "tmpfs on /tmp" | wc -l) -gt 0 ];then
-   if [ $(mount | grep "home/pi/.xbmc type none (rw,bind)" | wc -l) -lt 1 ];then
+   if [ $(mount | grep "home/pi/.kodi type none (rw,bind)" | wc -l) -lt 1 ];then
       /etc/init.d/aaxbmc start
    fi
 fi
