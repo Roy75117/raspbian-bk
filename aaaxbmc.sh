@@ -28,6 +28,15 @@ sudo service xbmc start
 #! /bin/sh
 # /etc/init.d/aaxbmc
 #
+### BEGIN INIT INFO
+# Provides: rsync
+# Required-Start: $network $local_fs $remote_fs
+# Required-Stop: $network $local_fs $remote_fs
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: set xbmc on Ramdisk with rsync
+# Description: rsync xbmc setting file to RAMDISK
+### END INIT INFO
 
 case "$1" in
   start)
