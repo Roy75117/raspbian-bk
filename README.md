@@ -12,6 +12,7 @@ What :
      2.install the following package
           a.transmission-daemon :  for BT
           b.lighttpd            :  for http server (turn on dir-list)
+          c.php-cgi             :  for http server php
           c.htop                :  advanced top
           d.bzip2               :  extend tar
 
