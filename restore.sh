@@ -42,7 +42,7 @@ sudo initctl start xbmc
 
 sudo apt-get update
 sudo apt-get -y install dpkg
-sudo apt-get -y install transmission-daemon lighttpd htop bzip2 aria2
+sudo apt-get -y install transmission-daemon lighttpd htop bzip2 aria2 php-cgi
 sudo apt-get autoclean
 sudo rm -rf /var/cache/apt/archives/*.deb
 
@@ -53,6 +53,9 @@ sudo cp ./setting.json /etc/transmission-daemon/setting.json
 
 sudo cp ./lighttpd.conf /etc/lighttpd/lighttpd.conf
 sudo chmod 744 /etc/lighttpd/lighttpd.conf
+sudo lighty-enable-mod fastcgi
+sudo lighty-enable-mod fastcgi-php
+sudo service lighttpd force-reload
 
 #For aria2c
 #http://www.albertdelafuente.com/doku.php/wiki/dev/raspi/aria2c-raspi
