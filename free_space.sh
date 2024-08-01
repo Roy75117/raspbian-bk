@@ -14,3 +14,6 @@ apt-get update
 
 # CLEAN journal logs (default 3days)
 journalctl --vacuum-time=3d
+
+# CLEAN configure file for uninstalled pkg
+apt-get clean && sudo apt-get autoremove --purge -y $(dpkg --list | grep '^rc' | awk '{print $2}')
