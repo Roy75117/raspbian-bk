@@ -98,6 +98,7 @@ sudo apt update
 sudo apt-get install -y minidlna
 sudo cp /etc/minidlna.conf /etc/minidlna.conf.bk
 sudo cp ./minidlna.conf /etc/minidlna.conf
+sudo /etc/init.d/minidlna restart
 
 #For aria2c
 #http://www.albertdelafuente.com/doku.php/wiki/dev/raspi/aria2c-raspi
