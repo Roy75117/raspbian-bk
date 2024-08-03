@@ -66,6 +66,10 @@ sudo apt-get install rpimonitor
 sleep 3
 sudo /etc/init.d/rpimonitor update
 sleep 3
+sudo cp ./data.conf /etc/rpimonitor/template/raspbian.conf
+sudo cp ./service.conf /etc/rpimonitor/template/service.conf
+sync
+sudo systemctl restart rpimonitor
 
 #For aria2c
 #http://www.albertdelafuente.com/doku.php/wiki/dev/raspi/aria2c-raspi
