@@ -1,0 +1,16 @@
+[Unit]
+Description=Filebrowser Service
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/filebrowser -d /usr/local/etc/filebrowser.db
+#filebrowser所在的工作目錄
+#WorkingDirectory=/home/filebrowser
+Restart=on-failure
+# Don't restart in the case of configuration error
+RestartPreventExitStatus=23
+
+[Install]
+WantedBy=multi-user.target
