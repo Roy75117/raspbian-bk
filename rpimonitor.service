@@ -1,0 +1,20 @@
+[Unit]
+Description=RPi-Monitor daemon
+Before=multi-user.target
+After=remote-fs.target
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Restart=on-failure
+KillMode=mixed
+Nice=19
+ExecStartPre=/bin/sleep 10
+ExecStart=/usr/bin/rpimonitord
+ExecStop=/bin/kill $MAINPID
+StandardOutput=append:/var/log/rpimonitor.log
+StandardError=append:/var/log/rpimonitor.log
+
+[Install]
+WantedBy=multi-user.target
