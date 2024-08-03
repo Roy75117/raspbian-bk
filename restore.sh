@@ -61,6 +61,7 @@ sudo lighty-enable-mod fastcgi-php
 sudo service lighttpd force-reload
 
 #install rpimonitor
+#https://feriman.com/install-and-customize-rpi-monitor/
 sudo apt-get -y install dirmngr
 sudo wget http://goo.gl/vewCLL -O /etc/apt/sources.list.d/rpimonitor.list
 sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 2C0D3C0F
