@@ -94,6 +94,7 @@ sudo systemctl start filebrowser.service
 sudo systemctl enable filebrowser.service
 
 #For minidlna
+#https://qiita.com/kmth220/items/1c592b8dc254503b6e83
 sudo apt update
 sudo apt-get install -y minidlna
 sudo cp /etc/minidlna.conf /etc/minidlna.conf.bk
