@@ -26,6 +26,10 @@ sudo chmod 755 /etc/rc.local
 sudo cp ./free_m /etc/cron.hourly/free_m
 sudo chmod 755 /etc/cron.hourly/free_m
 
+#only for raspberry pi 1 B
+sudo cp ./wifi_reconnect /etc/cron.hourly/wifi_reconnect
+sudo chmod 755 /etc/cron.hourly/wifi_reconnect
+
 sudo cp ./free_space /etc/cron.weekly/free_space
 sudo chmod 755 /etc/cron.weekly/free_space
 
