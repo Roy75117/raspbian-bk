@@ -20,6 +20,7 @@ What :
           g.samba               :  samba
           h.aria2c              :  aria2c
           i.minidlna            :  minidlna
+          j.wicd-curses         :  wicd-curses
 
      3.set a ramdisk link on home
 
