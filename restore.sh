@@ -65,7 +65,9 @@ sudo apt-get update
 sudo apt-get install rpimonitor
 sleep 3
 sudo /etc/init.d/rpimonitor update
-sleep 3
+sudo cp ./rpimonitor.service /etc/systemd/system/rpimonitor.service
+sudo systemctl daemon-reload
+sudo systemctl enable rpimonitor
 sudo cp ./data.conf /etc/rpimonitor/template/raspbian.conf
 sudo cp ./service.conf /etc/rpimonitor/template/service.conf
 sync
