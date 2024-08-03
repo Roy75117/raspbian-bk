@@ -77,6 +77,20 @@ sudo cp ./service.conf /etc/rpimonitor/template/service.conf
 sync
 sudo systemctl restart rpimonitor
 
+#For filebrowser
+#https://filebrowser.org/installation
+#https://blog.quickso.cn/2022/02/12/FileBrowser%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/
+curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
+sudo filebrowser -d /usr/local/etc/filebrowser.db config init
+sudo filebrowser -d /usr/local/etc/filebrowser.db config set --address 0.0.0.0
+sudo filebrowser -d /usr/local/etc/filebrowser.db config set --port 8088
+sudo filebrowser -d /usr/local/etc/filebrowser.db config set --log /dev/shm/
+sudo filebrowser -d /usr/local/etc/filebrowser.db users add pi pi --perm.admin
+sudo cp ./filebrowser.service /lib/systemd/system/filebrowser.service
+sudo systemctl daemon-reload
+sudo systemctl start filebrowser.service
+sudo systemctl enable filebrowser.service
+
 #For aria2c
 #http://www.albertdelafuente.com/doku.php/wiki/dev/raspi/aria2c-raspi
 sudo chmod +x /etc/init.d/aria2
