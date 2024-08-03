@@ -15,6 +15,11 @@ What :
           c.php-cgi             :  for http server php
           c.htop                :  advanced top
           d.bzip2               :  extend tar
+          e.rpimonitor          :  rpi monitor
+          f.filebrowser         :  filebrowser
+          g.samba               :  samba
+          h.aria2c              :  aria2c
+          i.minidlna            :  minidlna
 
      3.set a ramdisk link on home
 
