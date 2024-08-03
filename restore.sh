@@ -57,6 +57,16 @@ sudo lighty-enable-mod fastcgi
 sudo lighty-enable-mod fastcgi-php
 sudo service lighttpd force-reload
 
+#install rpimonitor
+sudo apt-get -y install dirmngr
+sudo wget http://goo.gl/vewCLL -O /etc/apt/sources.list.d/rpimonitor.list
+sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 2C0D3C0F
+sudo apt-get update
+sudo apt-get install rpimonitor
+sleep 3
+sudo /etc/init.d/rpimonitor update
+sleep 3
+
 #For aria2c
 #http://www.albertdelafuente.com/doku.php/wiki/dev/raspi/aria2c-raspi
 sudo chmod +x /etc/init.d/aria2
