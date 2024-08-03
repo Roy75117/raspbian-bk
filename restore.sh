@@ -72,7 +72,9 @@ sudo /etc/init.d/rpimonitor update
 sudo cp ./rpimonitor.service /etc/systemd/system/rpimonitor.service
 sudo systemctl daemon-reload
 sudo systemctl enable rpimonitor
+sudo cp /etc/rpimonitor/template/raspbian.conf /etc/rpimonitor/template/raspbian.conf.bk
 sudo cp ./data.conf /etc/rpimonitor/template/raspbian.conf
+sudo cp /etc/rpimonitor/template/service.conf /etc/rpimonitor/template/service.conf.bk
 sudo cp ./service.conf /etc/rpimonitor/template/service.conf
 sync
 sudo systemctl restart rpimonitor
@@ -90,6 +92,12 @@ sudo cp ./filebrowser.service /lib/systemd/system/filebrowser.service
 sudo systemctl daemon-reload
 sudo systemctl start filebrowser.service
 sudo systemctl enable filebrowser.service
+
+#For minidlna
+sudo apt update
+sudo apt-get install -y minidlna
+sudo cp /etc/minidlna.conf /etc/minidlna.conf.bk
+sudo cp ./minidlna.conf /etc/minidlna.conf
 
 #For aria2c
 #http://www.albertdelafuente.com/doku.php/wiki/dev/raspi/aria2c-raspi
