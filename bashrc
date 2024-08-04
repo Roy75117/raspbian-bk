@@ -92,6 +92,7 @@ alias free='free -m'
 alias cls='clear'
 alias wlan='wicd-curses'
 alias ps='ps -ef'
+alias port_check='sudo lsof -i -P -n | grep LISTEN'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
