@@ -91,7 +91,7 @@ sudo systemctl restart rpimonitor
 curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
 sudo filebrowser -d /usr/local/etc/filebrowser.db config init
 sudo filebrowser -d /usr/local/etc/filebrowser.db config set --address 0.0.0.0
-sudo filebrowser -d /usr/local/etc/filebrowser.db config set --port 8088
+sudo filebrowser -d /usr/local/etc/filebrowser.db config set --port 8080
 sudo filebrowser -d /usr/local/etc/filebrowser.db config set --log /dev/shm/filebrowser.log
 sudo filebrowser -d /usr/local/etc/filebrowser.db users add pi pi --perm.admin
 sudo cp ./filebrowser.service /lib/systemd/system/filebrowser.service
