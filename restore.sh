@@ -80,7 +80,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable rpimonitor
 sudo cp /etc/rpimonitor/template/raspbian.conf /etc/rpimonitor/template/raspbian.conf.bk
 sudo cp ./data.conf /etc/rpimonitor/template/raspbian.conf
-sudo cp /etc/rpimonitor/template/service.conf /etc/rpimonitor/template/service.conf.bk
+sudo cp /etc/rpimonitor/template/services.conf /etc/rpimonitor/template/services.conf.bk
 sudo cp ./service.conf /etc/rpimonitor/template/service.conf
 sync
 sudo systemctl restart rpimonitor
