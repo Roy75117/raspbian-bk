@@ -107,6 +107,33 @@ sudo cp /etc/minidlna.conf /etc/minidlna.conf.bk
 sudo cp ./minidlna.conf /etc/minidlna.conf
 sudo /etc/init.d/minidlna restart
 
+#For ufw
+sudo apt update
+sudo apt-get install -y ufw
+sudo ufw enable
+sudo ufw status
+# ufw-httpd
+sudo ufw allow 80
+# ufw-file browser
+sudo ufw allow 8080
+# ufw-rpi monitor
+sudo ufw allow 8888
+# ufw-ssh
+sudo ufw allow 22
+sudo ufw allow 222
+sudo ufw allow 2222
+# ufw-transmission-bt
+sudo ufw allow 9091
+sudo ufw allow 51413
+# ufw-aria2c
+sudo ufw allow 6800
+# ufw-minidlna
+sudo ufw allow 8200
+# ufw-Samba
+sudo ufw allow 445
+sudo ufw allow 139
+sudo ufw status
+
 #For aria2c
 #http://www.albertdelafuente.com/doku.php/wiki/dev/raspi/aria2c-raspi
 sudo chmod +x /etc/init.d/aria2
