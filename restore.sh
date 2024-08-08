@@ -84,6 +84,12 @@ sudo cp /etc/rpimonitor/template/services.conf /etc/rpimonitor/template/services
 sudo cp ./service.conf /etc/rpimonitor/template/service.conf
 sync
 sudo systemctl restart rpimonitor
+# if apt warnning msg keep showing up
+# https://github.com/XavierBerger/RPi-Monitor/issues/412
+sudo apt-key del 2C0D3C0F
+gpg --keyserver keyserver.ubuntu.com --recv-keys E4E362DE2C0D3C0F
+gpg --export E4E362DE2C0D3C0F | sudo gpg --dearmor -o /usr/share/keyrings/rpimonitor.gpg
+echo "deb [signed-by=/usr/share/keyrings/rpimonitor.gpg] http://giteduberger.fr rpimonitor/" | sudo tee /etc/apt/sources.list.d/rpimonitor.list > /dev/null
 
 #For filebrowser
 #https://filebrowser.org/installation
