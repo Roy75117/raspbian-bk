@@ -1,3 +1,4 @@
+#!/bin/bash
 # WiFi connectivity test (and reconnect if needed)
 # Source: https://feriman.com/automatically-reconnect-to-wifi-on-raspberry-pi/
 #
