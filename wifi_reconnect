@@ -16,3 +16,5 @@ if ! ping -c2 8.8.8.8 > /dev/null; then
  # Put here all services with network dependencies
         systemctl restart smbd ssh transmission-daemon lighttpd minidlna filebrowser rpimonitor
 fi
+
+# version 2 : https://gist.github.com/carry0987/372b9fefdd8041d0374f4e08fbf052b1
