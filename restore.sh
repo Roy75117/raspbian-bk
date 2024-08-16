@@ -82,6 +82,11 @@ sudo cp /etc/rpimonitor/template/raspbian.conf /etc/rpimonitor/template/raspbian
 sudo cp ./data.conf /etc/rpimonitor/template/raspbian.conf
 sudo cp /etc/rpimonitor/template/services.conf /etc/rpimonitor/template/services.conf.bk
 sudo cp ./service.conf /etc/rpimonitor/template/service.conf
+# for kernel > 4.9
+# https://github.com/XavierBerger/RPi-Monitor/issues/273
+sudo cp /etc/rpimonitor/template/version.conf /etc/rpimonitor/template/version.conf.bk
+sudo cp ./version.conf /etc/rpimonitor/template/version.conf
+##
 sync
 sudo systemctl restart rpimonitor
 # if apt warnning msg keep showing up
