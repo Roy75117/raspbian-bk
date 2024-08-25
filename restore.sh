@@ -159,6 +159,10 @@ mv ziahamza-webui-aria2-* /home/pi/media/webui-aria2
 rm yaaw.zip
 rm webui-aria2.zip
 
+#install mount-img
+#https://github.com/mafintosh/mount-img
+curl -fs https://raw.githubusercontent.com/mafintosh/mount-img/master/install | sh
+
 #Replace font to fix Chinese Subtile
 echo '--------自動置換字型腳本，作者: 蔡孟珂 mktsai@sweea.com------'
 echo '========================================================'
