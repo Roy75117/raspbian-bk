@@ -3,7 +3,7 @@ Description=ttyd server
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/ttyd -W -p 800 /bin/login
+ExecStart=/usr/local/bin/ttyd -W -p 800 -t fontSize=16 /bin/login
 Restart=always
 
 [Install]
