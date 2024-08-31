@@ -3,7 +3,7 @@ mkdir /home/pi/media
 mkdir /home/pi/media/downloads
 mkdir /home/pi/bin
 mkdir /home/pi/.aria2
-chmod 777 /home/pi/media
+chmod 755 /home/pi/media
 chmod 777 /home/pi/media/downloads
 cp nanorc ~/.nanorc
 
