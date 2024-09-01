@@ -10,6 +10,8 @@ cp nanorc ~/.nanorc
 #cp ./xbmc.restart /home/pi/bin/xbmc.restart
 #chmod 755 /home/pi/bin/xbmc.restart
 
+cd raspbmc-bk
+
 cp ./bashrc /home/pi/.bashrc
 cp ./profile /home/pi/.profile
 cp aria2.conf /home/pi/.aria2/aria2.conf
@@ -17,6 +19,7 @@ cp aria2.conf /home/pi/.aria2/aria2.conf
 # sudo cp ./vimrc ~/.vimrc
 # sudo cp ./vimrc /root/
 
+sudo apt-get -y install samba
 sudo cp ./smb.conf /etc/samba/smb.conf
 sudo chmod 744 /etc/samba/smb.conf
 
@@ -30,7 +33,7 @@ sudo chmod +x /etc/cron.hourly/free_m
 sudo cp ./wifi_reconnect /etc/cron.hourly/wifi_reconnect
 sudo chmod +x /etc/cron.hourly/wifi_reconnect
 
-sudo cp ./free_space /etc/cron.weekly/free_space
+sudo cp ./free_space.sh /etc/cron.weekly/free_space
 sudo chmod +x /etc/cron.weekly/free_space
 
 #sudo cp ./xinet.sh /scripts/xinet.sh
@@ -57,9 +60,9 @@ sudo apt-get autoclean
 #sudo rm -rf /var/cache/apt/archives/*.deb
 
 sudo /etc/init.d/transmission-daemon stop
-sudo cp ./transmission-daemon /etc/init.d/transmission-daemon
-sudo chmod 755 /etc/init.d/transmission-daemon
-sudo cp ./setting.json /etc/transmission-daemon/setting.json
+#sudo cp ./transmission-daemon /etc/init.d/transmission-daemon
+#sudo chmod 755 /etc/init.d/transmission-daemon
+sudo cp ./settings.json /etc/transmission-daemon/settings.json
 
 sudo cp ./lighttpd.conf /etc/lighttpd/lighttpd.conf
 sudo chmod 744 /etc/lighttpd/lighttpd.conf
@@ -82,7 +85,7 @@ sudo systemctl enable rpimonitor
 sudo cp /etc/rpimonitor/template/raspbian.conf /etc/rpimonitor/template/raspbian.conf.bk
 sudo cp ./data.conf /etc/rpimonitor/template/raspbian.conf
 sudo cp /etc/rpimonitor/template/services.conf /etc/rpimonitor/template/services.conf.bk
-sudo cp ./service.conf /etc/rpimonitor/template/service.conf
+sudo cp ./services.conf /etc/rpimonitor/template/services.conf
 sudo cp /etc/rpimonitor/template/sdcard.conf /etc/rpimonitor/template/sdcard.conf.bk
 sudo cp ./sdcard.conf /etc/rpimonitor/template/sdcard.conf
 # for kernel > 4.9
@@ -142,8 +145,6 @@ sudo systemctl enable ttyd
 #For ufw
 sudo apt update
 sudo apt-get install -y ufw
-sudo ufw enable
-sudo ufw status
 # ufw-httpd
 sudo ufw allow 80
 # ufw-file browser
@@ -166,6 +167,7 @@ sudo ufw allow 445
 sudo ufw allow 139
 # ufw-ttyd
 sudo ufw allow 800
+sudo ufw start
 sudo ufw status
 
 #For aria2c
