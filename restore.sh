@@ -83,6 +83,8 @@ sudo cp /etc/rpimonitor/template/raspbian.conf /etc/rpimonitor/template/raspbian
 sudo cp ./data.conf /etc/rpimonitor/template/raspbian.conf
 sudo cp /etc/rpimonitor/template/services.conf /etc/rpimonitor/template/services.conf.bk
 sudo cp ./service.conf /etc/rpimonitor/template/service.conf
+sudo cp /etc/rpimonitor/template/sdcard.conf /etc/rpimonitor/template/sdcard.conf.bk
+sudo cp ./sdcard.conf /etc/rpimonitor/template/sdcard.conf
 # for kernel > 4.9
 # https://github.com/XavierBerger/RPi-Monitor/issues/273
 sudo cp /etc/rpimonitor/template/version.conf /etc/rpimonitor/template/version.conf.bk
