@@ -102,6 +102,11 @@ gpg --keyserver keyserver.ubuntu.com --recv-keys E4E362DE2C0D3C0F
 gpg --export E4E362DE2C0D3C0F | sudo gpg --dearmor -o /usr/share/keyrings/rpimonitor.gpg
 echo "deb [signed-by=/usr/share/keyrings/rpimonitor.gpg] http://giteduberger.fr rpimonitor/" | sudo tee /etc/apt/sources.list.d/rpimonitor.list > /dev/null
 
+# to fix warning for Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+# https://github.com/RPi-Distro/repo/issues/348
+ln -s /usr/share/keyrings/raspbian-archive-keyring.gpg /etc/apt/trusted.gpg.d/raspbian-archive-keyring.gpg
+rm /etc/apt/trusted.gpg
+
 #For filebrowser
 #https://filebrowser.org/installation
 #https://blog.quickso.cn/2022/02/12/FileBrowser%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/
