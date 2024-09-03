@@ -93,6 +93,7 @@ alias cls='clear'
 alias wlan='wicd-curses'
 alias ps='ps -ef'
 alias port_check='sudo lsof -i -P -n | grep LISTEN'
+alias cpu_temp='awk '{print $1/1000,"°C"}' /sys/class/thermal/thermal_zone0/temp'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
