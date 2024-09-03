@@ -94,6 +94,7 @@ alias wlan='wicd-curses'
 alias ps='ps -ef'
 alias port_check='sudo lsof -i -P -n | grep LISTEN'
 alias cpu_temp='sed "s/\(...\)$/.\1°C/" < /sys/class/thermal/thermal_zone0/temp'
+#alias cpu_temp='echo "scale=1; $(cat /sys/class/thermal/thermal_zone0/temp)/1000" | bc'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
