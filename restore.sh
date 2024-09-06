@@ -39,6 +39,8 @@ sudo chmod +x /etc/cron.monthly/free_space
 sudo cp ./free_space.sh /etc/cron.monthly/free_space
 sudo chmod +x /etc/cron.monthly/remove-old-kernels.sh
 #ref : https://gist.github.com/spyesx/b4b1a8c4470f2893cac4e025fa6d332d
+sudo crontab -e
+> 0 0 1 * * bash /etc/cron.monthly/remove-old-kernels.sh exec
 
 #sudo cp ./xinet.sh /scripts/xinet.sh
 #sudo chmod 755 /scripts/xinet.sh
