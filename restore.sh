@@ -156,6 +156,17 @@ sudo systemctl daemon-reload
 sudo systemctl start ttyd
 sudo systemctl enable ttyd
 
+#For rpi-connect-lite (for Bookworm or later only)
+#https://www.raspberrypi.com/documentation/services/connect.html
+sudo apt install rpi-connect-lite
+rpi-connect signin # following instruction to signin
+systemctl --user start rpi-connect
+crontab -e
+===============
+10 * * * * (rpi-connect status | grep "Signed in: yes") || systemctl --user start rpi-connect
+# Check rpi-connect daemon every 10 mins.
+===============
+
 #For ufw
 sudo apt update
 sudo apt-get install -y ufw

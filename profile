@@ -24,3 +24,6 @@ sudo sh /scripts/configure-pi-user.sh
 
 export LC_ALL="zh_TW.UTF-8"
 PS1='\[\033[01;31m\]\t\[\033[00m\][$?]\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$\[\033[00m\] '
+
+# Check rpi-connect daemon when user login, if not running, then start rpi-connect
+(rpi-connect status | grep "Signed in: yes") || systemctl --user start rpi-connect
