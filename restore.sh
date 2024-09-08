@@ -41,7 +41,7 @@ sudo chmod +x /etc/cron.monthly/remove-old-kernels.sh
 #ref : https://gist.github.com/spyesx/b4b1a8c4470f2893cac4e025fa6d332d
 sudo crontab -e
 ===============
-0 0 1 * * bash /etc/cron.monthly/remove-old-kernels.sh exec
+0 1 1 * * bash /etc/cron.monthly/remove-old-kernels.sh exec
 # execute at 01:00 on first day of every month.
 ===============
 
@@ -163,7 +163,7 @@ rpi-connect signin # following instruction to signin
 systemctl --user start rpi-connect
 crontab -e
 ===============
-10 * * * * (rpi-connect status | grep "Signed in: yes") || systemctl --user start rpi-connect
+*/10 * * * * (rpi-connect status | grep "Signed in: yes") || systemctl --user start rpi-connect
 # Check rpi-connect daemon every 10 mins.
 ===============
 
