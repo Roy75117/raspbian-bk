@@ -197,8 +197,8 @@ sudo ufw status
 
 #allow multi broadcasting
 #https://bbs.archlinux.org/viewtopic.php?id=212452
-sudo ufw allow in proto udp to 224.0.0.0/24
-sudo ufw allow in proto udp to 192.168.2.0/24
+sudo ufw allow out proto udp to 224.0.0.0/24
+sudo ufw allow out proto udp to 192.168.2.0/24
 
 #For aria2c
 #http://www.albertdelafuente.com/doku.php/wiki/dev/raspi/aria2c-raspi
