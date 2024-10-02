@@ -196,9 +196,22 @@ sudo ufw start
 sudo ufw status
 
 #allow multi broadcasting
-#https://bbs.archlinux.org/viewtopic.php?id=212452
-sudo ufw allow out proto udp to 224.0.0.0/24
-sudo ufw allow out proto udp to 192.168.2.0/24
+#https://askubuntu.com/questions/252101/problems-allowing-outgoing-multicast-in-ufw
+sudo cp /etc/ufw/before.rules /etc/ufw/before.rules.bk
+sudo cat "# allow igmp codes from my local sub-net" >> /etc/ufw/before.rules
+sudo cat "-A ufw-before-input -p igmp -m ttl --ttl-eq 1 -j ACCEPT" >> /etc/ufw/before.rules
+
+sudo cp /etc/ufw/before6.rules /etc/ufw/before6.rules.bk
+sudo cat "# allow multicast group membership maintenance" >> /etc/ufw/before.rules
+sudo cat "-A ufw6-before-output -p icmpv6 --icmpv6-type 130 -m hl --hl-eq 1 -j ACCEPT" >> /etc/ufw/before.rules
+sudo cat "-A ufw6-before-output -p icmpv6 --icmpv6-type 131 -m hl --hl-eq 1 -j ACCEPT" >> /etc/ufw/before.rules
+sudo cat "-A ufw6-before-output -p icmpv6 --icmpv6-type 132 -m hl --hl-eq 1 -j ACCEPT" >> /etc/ufw/before.rules
+sudo cat "-A ufw6-before-output -p icmpv6 --icmpv6-type 143 -m hl --hl-eq 1 -j ACCEPT" >> /etc/ufw/before.rules
+sudo cat "# allow multicast group membership maintenance go in as well" >> /etc/ufw/before.rules
+sudo cat "-A ufw6-before-input -p icmpv6 --icmpv6-type 130 -j ACCEPT" >> /etc/ufw/before.rules
+sudo cat "-A ufw6-before-input -p icmpv6 --icmpv6-type 131 -j ACCEPT" >> /etc/ufw/before.rules
+sudo cat "-A ufw6-before-input -p icmpv6 --icmpv6-type 132 -j ACCEPT" >> /etc/ufw/before.rules
+sudo cat "-A ufw6-before-input -p icmpv6 --icmpv6-type 143 -j ACCEPT" >> /etc/ufw/before.rules
 
 #For aria2c
 #http://www.albertdelafuente.com/doku.php/wiki/dev/raspi/aria2c-raspi
