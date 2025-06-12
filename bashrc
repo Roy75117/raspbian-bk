@@ -94,6 +94,8 @@ alias wlan='wicd-curses'
 alias ps='ps -ef'
 alias port_check='sudo lsof -i -P -n | grep LISTEN'
 alias cpu_temp='sed "s/\(...\)$/.\1°C/" < /sys/class/thermal/thermal_zone0/temp'
+alias ssh_journal_log='sudo journalctl -u ssh.service'
+alias monitor_ssh_activity='sudo journalctl -u ssh.service -f'
 #alias cpu_temp='echo "scale=1; $(cat /sys/class/thermal/thermal_zone0/temp)/1000" | bc'
 
 # Alias definitions.

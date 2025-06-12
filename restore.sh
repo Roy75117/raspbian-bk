@@ -199,6 +199,12 @@ sudo ufw status
 #https://askubuntu.com/questions/252101/problems-allowing-outgoing-multicast-in-ufw
 sudo ufw allow from any to 224.0.0.0/24
 
+#For fail2ban
+sudo apt install fail2ban
+sudo cp ./jail.local /etc/fail2ban
+sudo systemctl restart fail2ban
+sudo fail2ban-client status
+
 #For aria2c
 #http://www.albertdelafuente.com/doku.php/wiki/dev/raspi/aria2c-raspi
 sudo cp ./aria2 /etc/init.d/

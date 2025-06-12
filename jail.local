@@ -1,0 +1,21 @@
+# /etc/fail2ban/jail.local
+
+[DEFAULT]
+# "ignoreip" can be a list of IP addresses, CIDR masks or DNS hosts.
+# The client IP is ignored if it matches any value in this list.
+#
+# ignoreip = 127.0.0.1/8 ::1
+ignoreip = 127.0.0.1/8 ::1 192.168.0.0/16
+
+[sshd]
+enabled = false
+
+[sshd-non-lan]
+enabled     = true
+backend     = systemd
+filter      = sshd
+maxretry    = 5
+findtime    = 300
+bantime     = 86400
+# port        = 222
+journalmatch = _SYSTEMD_UNIT=ssh.service
