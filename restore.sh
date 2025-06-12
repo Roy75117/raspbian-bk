@@ -12,7 +12,7 @@ cp nanorc ~/.nanorc
 
 cd raspbmc-bk
 
-cp ./bashrc /home/pi/.bashrc
+cp ./bashrc /home/pi/.bash_profile
 cp ./profile /home/pi/.profile
 cp aria2.conf /home/pi/.aria2/aria2.conf
 
