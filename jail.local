@@ -15,7 +15,7 @@ enabled     = true
 backend     = systemd
 filter      = sshd
 maxretry    = 5
-findtime    = 300
+findtime    = 600
 bantime     = 86400
 # port        = 222
 journalmatch = _SYSTEMD_UNIT=ssh.service
