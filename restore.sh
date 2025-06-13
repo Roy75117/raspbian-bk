@@ -51,6 +51,11 @@ sudo crontab -e
 ln -s /run/shm/ /home/pi/RAMDISK
 ln -s /run/shm/ /home/pi/media/RAMDISK
 
+# add vpn user without home directory and ssh shell
+sudo useradd -M -s /sbin/nologin vpn
+sudo passwd vpn
+grep vpn /etc/passwd
+
 # sudo passwd pi
 
 #wget --no-check-certificate http://cl.ly/1t2t2E1Z410B/download/raspbmc.backup.gz
