@@ -67,7 +67,7 @@ grep vpn /etc/passwd
 
 sudo apt-get update
 sudo apt-get -y install dpkg
-sudo apt-get -y install transmission-daemon lighttpd htop bzip2 aria2 php-cgi 
+sudo apt-get -y install transmission-daemon lighttpd htop bzip2 aria2 php-cgi xxd
 #raspberrypi 1 b only
 sudo apt-get -y install wicd-curses w3m 
 sudo apt-get autoclean
