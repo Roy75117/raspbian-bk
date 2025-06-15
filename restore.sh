@@ -199,6 +199,12 @@ sudo ufw allow 139
 sudo ufw allow 800
 sudo ufw start
 sudo ufw status
+# allow mDNS multicast
+sudo ufw allow proto udp to 224.0.0.0/4 port 5353
+# block russian unsafe ip
+sudo ufw deny from 45.134.26.0/24
+sudo ufw deny from 45.135.232.0/24
+sudo ufw deny from 45.140.17.0/24
 
 #allow multi broadcasting
 #https://askubuntu.com/questions/252101/problems-allowing-outgoing-multicast-in-ufw
