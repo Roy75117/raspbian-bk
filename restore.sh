@@ -200,7 +200,10 @@ sudo ufw allow 800
 sudo ufw start
 sudo ufw status
 # allow mDNS multicast
-sudo ufw allow proto udp to 224.0.0.0/4 port 5353
+sudo ufw allow in on wlan0 proto udp from 192.168.2.0/24 to any port 5353 comment 'allow mDNS IPv4 LAN'
+sudo ufw allow in on wlan0 proto udp from fe80::/10 to any port 5353 comment 'allow mDNS IPv6 link-local'
+sudo ufw allow in on wlan0 proto udp to 224.0.0.251 port 5353 comment 'mDNS multicast IPv4'
+sudo ufw allow in on wlan0 proto udp to ff02::fb port 5353 comment 'mDNS multicast IPv6'
 # block russian unsafe ip
 sudo ufw deny from 45.134.26.0/24
 sudo ufw deny from 45.135.232.0/24
