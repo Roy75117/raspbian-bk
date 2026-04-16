@@ -205,9 +205,9 @@ sudo ufw allow in on wlan0 proto udp from fe80::/10 to any port 5353 comment 'al
 sudo ufw allow in on wlan0 proto udp to 224.0.0.251 port 5353 comment 'mDNS multicast IPv4'
 sudo ufw allow in on wlan0 proto udp to ff02::fb port 5353 comment 'mDNS multicast IPv6'
 # block russian unsafe ip
-sudo ufw deny from 45.134.26.0/24
-sudo ufw deny from 45.135.232.0/24
-sudo ufw deny from 45.140.17.0/24
+#sudo ufw deny from 45.134.26.0/24
+#sudo ufw deny from 45.135.232.0/24
+#sudo ufw deny from 45.140.17.0/24
 
 #allow multi broadcasting
 #https://askubuntu.com/questions/252101/problems-allowing-outgoing-multicast-in-ufw
@@ -218,6 +218,7 @@ sudo apt install fail2ban
 sudo cp ./jail.local /etc/fail2ban
 sudo systemctl restart fail2ban
 sudo fail2ban-client status
+sudo fail2ban-client status sshd-non-lan
 
 #For aria2c
 #http://www.albertdelafuente.com/doku.php/wiki/dev/raspi/aria2c-raspi
