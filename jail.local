@@ -17,5 +17,11 @@ filter      = sshd
 maxretry    = 5
 findtime    = 600
 bantime     = 86400
+# 開啟封鎖時間增長功能
+bantime.increment = true
+# 封鎖時間成長倍率 (預設是 1, 2, 4, 8...)
+bantime.factor = 2
+# 最大封鎖時間 (例如封鎖一個月)
+bantime.maxtime = 2592000
 # port        = 222
 journalmatch = _SYSTEMD_UNIT=ssh.service
