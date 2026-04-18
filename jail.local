@@ -14,6 +14,8 @@ enabled = false
 enabled     = true
 backend     = systemd
 filter      = sshd
+mode = aggressive
+
 maxretry    = 5
 findtime    = 600
 bantime     = 86400
