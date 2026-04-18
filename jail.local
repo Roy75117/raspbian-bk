@@ -24,4 +24,4 @@ bantime.factor = 2
 # 最大封鎖時間 (例如封鎖一個月)
 bantime.maxtime = 2592000
 # port        = 222
-journalmatch = _SYSTEMD_UNIT=ssh.service
+# journalmatch = _SYSTEMD_UNIT=ssh.service
