@@ -16,8 +16,8 @@ backend     = systemd
 filter      = sshd
 mode = aggressive
 
-maxretry    = 5
-findtime    = 600
+maxretry    = 4
+findtime    = 3600
 bantime     = 86400
 # 開啟封鎖時間增長功能
 bantime.increment = true
